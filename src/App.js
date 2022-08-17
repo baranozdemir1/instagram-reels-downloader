@@ -7,8 +7,8 @@ function App() {
   const [items, setItems] = useState([])
 
   const headers = {
-    'X-RapidAPI-Key': 'f7aafdff2amshb0f44d90bad7e8bp1bb8bfjsn8333e2bedcf0',
-    'X-RapidAPI-Host': 'instagram188.p.rapidapi.com',
+    'X-RapidAPI-Key': process.env.REACT_APP_X_RAPIDAPI_KEY,
+    'X-RapidAPI-Host': process.env.REACT_APP_X_RAPIDAPI_HOST,
     'Access-Control-Allow-Origin': '*',
   }
 
@@ -62,7 +62,7 @@ function App() {
       items?.map((item, index) => (
         <div key={index}>
 
-          <img crossOrigin="anonymous" src={item.media.image_versions2.additional_candidates.first_frame.url} width={500} height={500}/>
+          <img alt="video cover" crossOrigin="anonymous" src={item.media.image_versions2.additional_candidates.first_frame.url} width={500} height={500}/>
           {item.media.video_versions[0].url}
           
           
