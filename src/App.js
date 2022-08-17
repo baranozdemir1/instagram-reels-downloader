@@ -22,7 +22,7 @@ function App() {
 
     try {
       const res = await axios.request(userNameOptions)
-      
+      console.log("findUserID is working")
       return res.data.data
     } catch (error) {
       console.error(error)
@@ -43,6 +43,7 @@ function App() {
 
     axios.request(userIdOptions).then(function (response) {
       setItems(response.data.data.items);
+      console.log("submitHandle is working")
     }).catch(function (error) {
       console.error(error);
     });
@@ -64,6 +65,8 @@ function App() {
 
           <img alt="video cover" crossOrigin="anonymous" src={item.media.image_versions2.additional_candidates.first_frame.url} width={500} height={500}/>
           {item.media.video_versions[0].url}
+
+          {console.log(item.media.video_versions[0].url)}
           
           
         </div>
